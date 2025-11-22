@@ -1,0 +1,36 @@
+Date:7/11/25
+Aim:This Pointer
+
+program:
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int roll;
+    float marks;
+
+public:
+    // Constructor using this pointer
+    Student(int roll, float marks) {
+        this->roll = roll;      // Resolving naming conflict
+        this->marks = marks;
+    }
+
+    void display() {
+        cout << "Roll Number: " << this->roll << endl;
+        cout << "Marks: " << this->marks << endl;
+    }
+};
+
+int main() {
+    Student s1(101, 88.5);  // Object created automatically calls constructor
+    s1.display();
+    return 0;
+}
+
+output:
+Roll Number: 101
+Marks: 88.5
+
+Result:Thus C++ program was executed successfully.
