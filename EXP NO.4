@@ -1,0 +1,103 @@
+Date:
+Aim:Develop a C++ program to generate Electricity bill.
+
+program:
+#include <iostream>
+using namespace std;
+
+class ElectricityBill {
+private:
+    int consumerNo;
+    string consumerName;
+    int prevReading, currReading;
+    string connectionType;
+    int units;
+    float billAmount;
+
+public:
+    void getDetails() {
+        cout << "Enter Consumer Number: ";
+        cin >> consumerNo;
+        cin.ignore();
+
+        cout << "Enter Consumer Name: ";
+        getline(cin, consumerName);
+
+        cout << "Enter Previous Month Reading: ";
+        cin >> prevReading;
+
+        cout << "Enter Current Month Reading: ";
+        cin >> currReading;
+
+        cout << "Enter Connection Type (domestic/commercial): ";
+        cin >> connectionType;
+
+        units = currReading - prevReading;
+    }
+
+    void calculateBill() {
+        if (connectionType == "domestic" || connectionType == "Domestic") {
+            if (units <= 100)
+                billAmount = units * 1;
+            else if (units <= 200)
+                billAmount = (100 * 1) + (units - 100) * 2.5;
+            else if (units <= 500)
+                billAmount = (100 * 1) + (100 * 2.5) + (units - 200) * 4;
+            else
+                billAmount = (100 * 1) + (100 * 2.5) + (300 * 4) + (units - 500) * 6;
+        }
+        else if (connectionType == "commercial" || connectionType == "Commercial") {
+            if (units <= 100)
+                billAmount = units * 2;
+            else if (units <= 200)
+                billAmount = (100 * 2) + (units - 100) * 4.5;
+            else if (units <= 500)
+                billAmount = (100 * 2) + (100 * 4.5) + (units - 200) * 6;
+            else
+                billAmount = (100 * 2) + (100 * 4.5) + (300 * 6) + (units - 500) * 7;
+        }
+        else {
+            cout << "\nInvalid Connection Type!" << endl;
+            billAmount = 0;
+        }
+    }
+
+    void displayBill() {
+        cout << "\n--------- Electricity Bill ---------\n";
+        cout << "Consumer No      : " << consumerNo << endl;
+        cout << "Consumer Name    : " << consumerName << endl;
+        cout << "Previous Reading : " << prevReading << endl;
+        cout << "Current Reading  : " << currReading << endl;
+        cout << "Units Consumed   : " << units << endl;
+        cout << "Connection Type  : " << connectionType << endl;
+        cout << "Bill Amount      : Rs. " << billAmount << endl;
+        cout << "-----------------------------------\n";
+    }
+};
+
+int main() {
+    ElectricityBill eb;
+    eb.getDetails();
+    eb.calculateBill();
+    eb.displayBill();
+    return 0;
+}
+
+output:
+Enter Consumer Number: 2025
+Enter Consumer Name: Arjun
+Enter Previous Month Reading: 150
+Enter Current Month Reading: 350
+Enter Connection Type (domestic/commercial): domestic
+
+--------- Electricity Bill ---------
+Consumer No      : 2025
+Consumer Name    : Arjun
+Previous Reading : 150
+Current Reading  : 350
+Units Consumed   : 200
+Connection Type  : domestic
+Bill Amount      : Rs. 350
+-----------------------------------
+
+Result:Thus C++ program was executed successfully.
