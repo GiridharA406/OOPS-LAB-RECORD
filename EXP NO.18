@@ -1,0 +1,68 @@
+Date:24/10/25
+Aim:To demonstrate Multilevel Inheritance
+
+program:
+#include <iostream>
+using namespace std;
+
+// Base class
+class Student {
+protected:
+    int roll;
+public:
+    void getRoll() {
+        cout << "Enter Roll Number: ";
+        cin >> roll;
+    }
+    void displayRoll() {
+        cout << "Roll Number: " << roll << endl;
+    }
+};
+
+// Derived class from Student
+class Marks : public Student {
+protected:
+    int m1, m2;
+public:
+    void getMarks() {
+        cout << "Enter marks of 2 subjects: ";
+        cin >> m1 >> m2;
+    }
+    void displayMarks() {
+        cout << "Marks: " << m1 << ", " << m2 << endl;
+    }
+};
+
+// Derived class from Marks (Multilevel Inheritance)
+class Result : public Marks {
+public:
+    void displayResult() {
+        int total = m1 + m2;
+        cout << "Total Marks: " << total << endl;
+    }
+};
+
+int main() {
+    Result r;
+
+    r.getRoll();
+    r.getMarks();
+
+    cout << "\n--- Result Details ---" << endl;
+    r.displayRoll();
+    r.displayMarks();
+    r.displayResult();
+
+    return 0;
+}
+
+output:
+Enter Roll Number: 101
+Enter marks of 2 subjects: 45 47
+
+--- Result Details ---
+Roll Number: 101
+Marks: 45, 47
+Total Marks: 92
+
+Result:Thus C++ program was executed successfully.
