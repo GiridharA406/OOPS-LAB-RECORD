@@ -1,0 +1,32 @@
+Date:7/11/25
+Aim:Exception Handling
+
+program:
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    try {
+        if(b == 0) {
+            throw b; // Throwing an exception
+        }
+        cout << "Result: " << a / b << endl;
+    }
+    catch(int x) {
+        cout << "Error: Division by zero is not allowed!" << endl;
+    }
+
+    cout << "Program continues..." << endl;
+    return 0;
+}
+
+output:
+Enter two numbers: 10 0
+Error: Division by zero is not allowed!
+Program continues...
+
+Result:Thus C++ program was executed successfully.
