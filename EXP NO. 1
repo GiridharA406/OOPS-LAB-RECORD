@@ -1,0 +1,50 @@
+Date:22/8/25
+Aim: Write C++ program to display student information using Class and Objects 
+
+program:
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int rollNo;
+    string course;
+
+public:
+    void getData() {
+        cout << "Enter Student Name: ";
+        getline(cin, name);
+        cout << "Enter Roll Number: ";
+        cin >> rollNo;
+        cin.ignore();  
+        cout << "Enter Course: ";
+        getline(cin, course);
+    }
+
+    void displayData() {
+        cout << "\n--- Student Information ---\n";
+        cout << "Name: " << name << endl;
+        cout << "Roll Number: " << rollNo << endl;
+        cout << "Course: " << course << endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.getData();
+    s.displayData();
+    return 0;
+}
+
+output:
+Enter Student Name: Ravi
+Enter Roll Number: 21
+Enter Course: BCA
+
+--- Student Information ---
+Name: Ravi
+Roll Number: 21
+Course: BCA
+
+Result:Thus C++ program was executed successfully.
