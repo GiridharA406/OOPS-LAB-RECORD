@@ -1,0 +1,54 @@
+Date:17/10/25
+Aim:To implement string concatenation using Binary operator overloading(+)
+
+program:
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Concatenate {
+private:
+    string str;
+
+public:
+    // Constructor to input string
+    Concatenate(string s = "") {
+        str = s;
+    }
+
+    // Overloading + operator
+    Concatenate operator + (Concatenate c) {
+        Concatenate temp;
+        temp.str = str + c.str;  // concatenate strings
+        return temp;
+    }
+
+    void display() {
+        cout << "String: " << str << endl;
+    }
+};
+
+int main() {
+    Concatenate s1("Hello ");
+    Concatenate s2("World!");
+
+    Concatenate s3 = s1 + s2;  // Using overloaded + operator
+
+    cout << "First String: ";
+    s1.display();
+
+    cout << "Second String: ";
+    s2.display();
+
+    cout << "After Concatenation: ";
+    s3.display();
+
+    return 0;
+}
+
+output:
+First String: Hello
+Second String: World!
+After Concatenation: Hello World!
+
+Result:Thus C++ program was executed successfully.
