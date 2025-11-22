@@ -1,0 +1,85 @@
+
+Date:5/9/25
+Aim: Write C++ program to display student information using Class and Objects for N Student(Array of objects)
+
+program:
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int rollNo;
+    string course;
+
+public:
+    void getData() {
+        cout << "Enter Student Name: ";
+        cin.ignore();
+        getline(cin, name);
+        cout << "Enter Roll Number: ";
+        cin >> rollNo;
+        cin.ignore();
+        cout << "Enter Course: ";
+        getline(cin, course);
+    }
+
+    void displayData() {
+        cout << "Name: " << name << endl;
+        cout << "Roll Number: " << rollNo << endl;
+        cout << "Course: " << course << endl;
+        cout << "--------------------------------\n";
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter Number of Students: ";
+    cin >> n;
+
+    Student s[n];  // Array of Objects
+
+    cout << "\n--- Enter Student Details ---\n";
+    for(int i = 0; i < n; i++) {
+        cout << "\nStudent " << i + 1 << ":\n";
+        s[i].getData();
+    }
+
+    cout << "\n\n--- Displaying Student Details ---\n";
+    for(int i = 0; i < n; i++) {
+        cout << "\nStudent " << i + 1 << ":\n";
+        s[i].displayData();
+    }
+
+    return 0;
+}
+
+output:
+Enter Number of Students: 2
+
+--- Enter Student Details ---
+
+Student 1:
+Enter Student Name: Kiran
+Enter Roll Number: 101
+Enter Course: B.Sc
+
+Student 2:
+Enter Student Name: Anita
+Enter Roll Number: 102
+Enter Course: BCA
+
+--- Displaying Student Details ---
+
+Student 1:
+Name: Kiran
+Roll Number: 101
+Course: B.Sc
+--------------------------------
+Student 2:
+Name: Anita
+Roll Number: 102
+Course: BCA
+--------------------------------
+
+Result:Thus C++ program was executed successfully.
