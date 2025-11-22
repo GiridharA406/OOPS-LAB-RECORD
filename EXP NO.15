@@ -1,0 +1,59 @@
+Date:10/10/25
+Aim:To implement Binary operator overloading
+
+program:
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    int real, imag;
+
+public:
+    Complex() {
+        real = 0;
+        imag = 0;
+    }
+
+    Complex(int r, int i) {
+        real = r;
+        imag = i;
+    }
+
+    // Operator overloading function
+    Complex operator + (Complex c) {
+        Complex temp;
+        temp.real = real + c.real;
+        temp.imag = imag + c.imag;
+        return temp;
+    }
+
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1(5, 4);
+    Complex c2(3, 2);
+
+    Complex c3 = c1 + c2; // Binary operator overloading
+
+    cout << "First Complex Number: ";
+    c1.display();
+
+    cout << "Second Complex Number: ";
+    c2.display();
+
+    cout << "Result after Addition: ";
+    c3.display();
+
+    return 0;
+}
+
+output:
+First Complex Number: 5 + 4i
+Second Complex Number: 3 + 2i
+Result after Addition: 8 + 6i
+
+Result:Thus C++ program was executed successfully.
