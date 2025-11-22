@@ -1,0 +1,63 @@
+Date:12/9/25
+Aim:Write a C++ Program to implement constructor overloading
+
+program:
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    // Default Constructor
+    Student() {
+        name = "Unknown";
+        age = 0;
+        cout << "Default Constructor Called" << endl;
+    }
+
+    // Parameterized Constructor (1 Argument)
+    Student(string n) {
+        name = n;
+        age = 0;
+        cout << "Parameterized Constructor (1 argument) Called" << endl;
+    }
+
+    // Parameterized Constructor (2 Arguments)
+    Student(string n, int a) {
+        name = n;
+        age = a;
+        cout << "Parameterized Constructor (2 arguments) Called" << endl;
+    }
+
+    void display() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+};
+
+int main() {
+    Student s1;                 // Calls Default Constructor
+    Student s2("Rahul");        // Calls Parameterized Constructor (1 argument)
+    Student s3("Anita", 20);    // Calls Parameterized Constructor (2 arguments)
+
+    cout << "\nDisplaying Details:\n";
+    s1.display();
+    s2.display();
+    s3.display();
+
+    return 0;
+}
+
+output:
+Default Constructor Called
+Parameterized Constructor (1 argument) Called
+Parameterized Constructor (2 arguments) Called
+
+Displaying Details:
+Name: Unknown, Age: 0
+Name: Rahul, Age: 0
+Name: Anita, Age: 20
+
+Result:Thus C++ program was executed successfully.
