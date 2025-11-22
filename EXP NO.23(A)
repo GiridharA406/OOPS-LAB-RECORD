@@ -1,0 +1,27 @@
+Date:7/11/25
+Aim:Function Template
+
+program:
+#include <iostream>
+using namespace std;
+
+// Function Template
+template <class T>
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    cout << "Integer Addition: " << add(10, 20) << endl;
+    cout << "Float Addition: " << add(5.5, 2.3) << endl;
+    cout << "Character Addition: " << add('A', 1) << endl;
+
+    return 0;
+}
+
+output:
+Integer Addition: 30
+Float Addition: 7.8
+Character Addition: B
+
+Result:Thus C++ program was executed successfully.
