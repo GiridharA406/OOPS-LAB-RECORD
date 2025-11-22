@@ -1,0 +1,49 @@
+Date:3/10/25
+Aim:To implement Unary Operator overloading
+
+program:
+#include <iostream>
+using namespace std;
+
+class Unary {
+private:
+    int x, y;
+
+public:
+    Unary(int a, int b) {  // Parameterized Constructor
+        x = a;
+        y = b;
+    }
+
+    void display() {
+        cout << "x = " << x << ", y = " << y << endl;
+    }
+
+    // Overload Unary ++ Operator
+    void operator ++() {
+        x++;
+        y++;
+    }
+};
+
+int main() {
+    Unary obj(10, 20);
+
+    cout << "Before Overloading: " << endl;
+    obj.display();
+
+    ++obj; // Calls operator++
+
+    cout << "After Overloading: " << endl;
+    obj.display();
+
+    return 0;
+}
+
+output:
+Before Overloading:
+x = 10, y = 20
+After Overloading:
+x = 11, y = 21
+
+Result: Thus C++ program was executed successfully.
