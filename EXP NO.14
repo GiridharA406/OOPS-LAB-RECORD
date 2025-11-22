@@ -1,0 +1,40 @@
+Date:10/10/25
+Aim:write program for Friend function
+
+program:
+#include <iostream>
+using namespace std;
+
+class Sample {
+private:
+    int a, b;
+
+public:
+    void getData() {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+    }
+
+    // Declaration of friend function
+    friend void display(Sample s);
+};
+
+// Definition of friend function
+void display(Sample s) {
+    cout << "\nValue of A = " << s.a;
+    cout << "\nValue of B = " << s.b << endl;
+}
+
+int main() {
+    Sample obj;
+    obj.getData();
+    display(obj);
+    return 0;
+}
+
+output:
+Enter two numbers: 10 20
+Value of A = 10
+Value of B = 20
+
+Result:Thus C++ program was executed successfully.
