@@ -1,0 +1,35 @@
+Date:5/9/25
+Aim:.Write a C++ Program to demonstrate the Constructor and Destructor
+
+program:
+#include <iostream>
+using namespace std;
+
+class Demo {
+public:
+    // Constructor
+    Demo() {
+        cout << "Constructor is called!" << endl;
+    }
+
+    // Destructor
+    ~Demo() {
+        cout << "Destructor is called!" << endl;
+    }
+};
+
+int main() {
+    cout << "Creating object..." << endl;
+    Demo obj;   // Object created → Constructor will be called
+
+    cout << "Program is about to end..." << endl;
+    return 0;  // When program ends, object goes out of scope → Destructor called
+}
+
+output:
+Creating object...
+Constructor is called!
+Program is about to end...
+Destructor is called!
+
+Result:Thus C++ program was executed successfully.
