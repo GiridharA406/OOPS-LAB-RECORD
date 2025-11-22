@@ -1,0 +1,57 @@
+Date:17/10/25
+Aim:To demonstrate Single Inheritance
+
+program:
+#include <iostream>
+using namespace std;
+
+// Base Class
+class Student {
+protected:
+    int roll;
+public:
+    void getRoll() {
+        cout << "Enter Roll Number: ";
+        cin >> roll;
+    }
+    void displayRoll() {
+        cout << "Roll Number: " << roll << endl;
+    }
+};
+
+// Derived Class
+class Marks : public Student {
+private:
+    int marks;
+public:
+    void getMarks() {
+        cout << "Enter Marks: ";
+        cin >> marks;
+    }
+    void displayMarks() {
+        cout << "Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    Marks m;  // Object of derived class
+
+    m.getRoll();     // Access base class function
+    m.getMarks();    // Access derived class function
+
+    cout << "\nStudent Details:\n";
+    m.displayRoll();
+    m.displayMarks();
+
+    return 0;
+}
+
+output:
+Enter Roll Number: 101
+Enter Marks: 85
+
+Student Details:
+Roll Number: 101
+Marks: 85
+
+Result:Thus C++ program was executed successfully.
