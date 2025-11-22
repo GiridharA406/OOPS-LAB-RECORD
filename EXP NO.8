@@ -1,0 +1,51 @@
+Date:12/9/25
+Aim:Write a C++ Program to implement Object as Function arguments
+
+program:
+#include <iostream>
+using namespace std;
+
+class Number {
+private:
+    int num;
+
+public:
+    void getNumber() {
+        cout << "Enter a number: ";
+        cin >> num;
+    }
+
+    // Passing object as function argument
+    void compare(Number n2) {
+        if (num > n2.num)
+            cout << num << " is greater than " << n2.num << endl;
+        else if (num < n2.num)
+            cout << n2.num << " is greater than " << num << endl;
+        else
+            cout << "Both numbers are equal" << endl;
+    }
+};
+
+int main() {
+    Number n1, n2;
+
+    cout << "Enter details for first object:\n";
+    n1.getNumber();
+
+    cout << "Enter details for second object:\n";
+    n2.getNumber();
+
+    // Passing object as argument
+    n1.compare(n2);
+
+    return 0;
+}
+
+output:
+Enter details for first object:
+Enter a number: 25
+Enter details for second object:
+Enter a number: 40
+40 is greater than 25
+
+Result:Thus C++ program was executed successfully.
