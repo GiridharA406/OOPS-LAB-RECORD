@@ -1,0 +1,58 @@
+Date:24/10/25
+Aim:To demonstrate Multiple Inheritance
+
+program:
+#include <iostream>
+using namespace std;
+
+// Base Class 1
+class Student {
+protected:
+    int roll;
+public:
+    void getRoll() {
+        cout << "Enter Roll Number: ";
+        cin >> roll;
+    }
+};
+
+// Base Class 2
+class Marks {
+protected:
+    int marks;
+public:
+    void getMarks() {
+        cout << "Enter Marks: ";
+        cin >> marks;
+    }
+};
+
+// Derived Class inheriting from both Student & Marks
+class Result : public Student, public Marks {
+public:
+    void display() {
+        cout << "\n--- Student Result ---" << endl;
+        cout << "Roll Number: " << roll << endl;
+        cout << "Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    Result r;
+
+    r.getRoll();
+    r.getMarks();
+    r.display();
+
+    return 0;
+}
+
+output:
+Enter Roll Number: 120
+Enter Marks: 85
+
+--- Student Result ---
+Roll Number: 120
+Marks: 85
+
+Result:Thus C++ program was executed successfully.
