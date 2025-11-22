@@ -1,0 +1,48 @@
+Date:19/9/25
+Aim: Demonstrate the use of Manipulators 
+
+program:
+#include <iostream>
+#include <iomanip> // Required for manipulators
+using namespace std;
+
+int main() {
+    
+    cout << "Using endl and tab (\\t):" << endl;
+    cout << "Name\tRoll\tMarks" << endl;
+    cout << "Ravi\t101\t85" << endl;
+    
+    cout << "\nUsing setw for alignment:" << endl;
+    cout << setw(10) << "Name" 
+         << setw(10) << "Code" 
+         << setw(10) << "Price" << endl;
+    cout << setw(10) << "Pen" 
+         << setw(10) << "P101" 
+         << setw(10) << "10" << endl;
+    cout << setw(10) << "Book" 
+         << setw(10) << "B105" 
+         << setw(10) << "50" << endl;
+
+    cout << "\nUsing setprecision and fixed:" << endl;
+    double price = 123.456789;
+    cout << "Original Price: " << price << endl;
+    cout << "Fixed & setprecision(2): " << fixed << setprecision(2) << price << endl;
+
+    return 0;
+}
+
+output:
+Using endl and tab (\t):
+Name    Roll    Marks
+Ravi    101     85
+
+Using setw for alignment:
+      Name      Code     Price
+       Pen      P101        10
+      Book      B105        50
+
+Using setprecision and fixed:
+Original Price: 123.456789
+Fixed & setprecision(2): 123.46
+
+Result:Thus C++ program was executed successfully.
