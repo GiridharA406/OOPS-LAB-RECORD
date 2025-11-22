@@ -1,0 +1,68 @@
+Date:3/10/25
+Aim:Write a C++ program to demonstrate the use of static data member and static member functions in a class.  
+
+program:
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int rollNo;
+    static int count; // Static Data Member
+
+public:
+    void getData() {
+        cout << "Enter Name: ";
+        cin.ignore();
+        getline(cin, name);
+        cout << "Enter Roll Number: ";
+        cin >> rollNo;
+        count++; // Increasing static variable each time an object is created
+    }
+
+    void display() {
+        cout << "Name: " << name << ", Roll No: " << rollNo << endl;
+    }
+
+    // Static Member Function
+    static void showCount() {
+        cout << "Total number of students: " << count << endl;
+    }
+};
+
+// Definition of static data member
+int Student::count = 0;
+
+int main() {
+    Student s1, s2;
+
+    cout << "Enter details of Student 1:\n";
+    s1.getData();
+    cout << "Enter details of Student 2:\n";
+    s2.getData();
+
+    cout << "\n--- Student Details ---\n";
+    s1.display();
+    s2.display();
+
+    // Calling static member function
+    Student::showCount();
+
+    return 0;
+}
+
+output:
+Enter details of Student 1:
+Enter Name: Raj
+Enter Roll Number: 10
+Enter details of Student 2:
+Enter Name: Sneha
+Enter Roll Number: 18
+
+--- Student Details ---
+Name: Raj, Roll No: 10
+Name: Sneha, Roll No: 18
+Total number of students: 2
+
+Result:Thus C++ program was executed successfully.
